@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trouble-Shooter
+{% endblock %}
+
+{% block main %}
+<div id="problem-picker">
+    <h1>What problems is your reed having?</h1>
+    <aside>(Check all that apply)</aside>
+    <form id="reed-problems">
+        <input type="checkbox" name="problems" value="too-hard">
+        <label class="container" for="problems"></label>
+            Cane is too hard
+        </label><br>
+
+        <input type="checkbox" name="problems" value="too-soft">
+        <label class="container" for="problems">
+            Cane is too soft
+        </label><br>
+
+        <input type="checkbox" name="problems" value="heavy-in-lows">
+        <label class="container" for="problems">
+            Hard to play in the low register
+        </label><br>
+
+        <input type="checkbox" name="problems" value="heavy-in-highs">
+        <label class="container" for="problems">
+            Hard to play in the high register
+        </label><br>
+
+        <input type="checkbox" name="problems" value="too-dark">
+        <label class="container" for="problems">
+            Sounds too dark
+        </label><br>
+
+        <input type="checkbox" name="problems" value="too-bright">
+        <label class="container" for="problems">
+            Sounds too bright
+        </label><br>
+
+        <input type="checkbox" name="problems" value="tonguing-too-hard">
+        <label class="container" for="problems">
+            Tonguing is too hard
+        </label><br>
+
+        <input type="checkbox" name="problems" value="tonguing-too-easy">
+        <label class="container" for="problems">
+            Tonguing is too easy
+        </label><br>
+
+        <input type="checkbox" name="problems" value="flat-in-highs">
+        <label class="container" for="problems">
+            Sounds sharp in the low register
+        </label><br>
+
+        <input type="checkbox" name="problems" value="sharp-in-lows">
+        <label class="container" for="problems">
+            Sounds low in the high register
+        </label><br>
+    </form>
+    <div id="submit-container">
+        <button id="submit">Submit</button>
+    </div>
+</div>
+    <div id="reed-solutions">
+        <h2 class="problem"></h2>
+        <h3 class="solution-text"></h3>
+        <h4 class="tools"></h4>
+        <div class="image"></div>
+        <h4>How is your reed doing now?</h4>
+        <button class="yes">That helped — let's move on!</button>
+        <button class="no">It still needs some work in this area.</button>
+    </div>
+<script src="{{ url_for('static', filename='trouble-shooter.js') }}"></script>
+{% endblock %}
